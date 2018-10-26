@@ -1,0 +1,35 @@
+baseURL = "http://bougiefever.io/"
+languageCode = "en-us"
+title = "Bougiefever"
+theme = "ananke"
+
+copyright = "Copyright &copy; 2018 - Annie Bougie"
+canonifyurls = true
+
+paginate = 3
+
+summaryLength = 30
+enableEmoji = true
+enableGitInfo = true
+pygmentsCodeFences = true
+
+[author]
+    name = "Annie Bougie"
+    github = "https://github.com/bougiefever"
+    gitlab = ""
+    linkedin = ""
+    facebook = ""
+    twitter = ""
+    instagram = ""
+
+[params]
+    tagline = "All things Azure"
+    background_color_class = "bg-black"
+    featured_image = "/images/computer-data-analytics-blue-background-website-header.jpg"
+    recent_posts_number = 5
+
+[frontmatter]
+    date = ["date", "publishDate", "lastmod"]
+    lastmod = [":git", "lastmod", "date", "publishDate"]
+    publishDate = ["publishDate", "date"]
+    expiryDate = ["expiryDate"]

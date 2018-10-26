@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bougiefever</title>
+    <link>http://bougiefever.io/</link>
+    <description>Recent content on Bougiefever</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright &amp;copy; 2018 - Annie Bougie</copyright>
+    
+	<atom:link href="http://bougiefever.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>
