@@ -1,4 +1,4 @@
-baseURL = "http://bougiefever.io/"
+baseURL = "https://bougiefever.azurewebsites.net/"
 languageCode = "en-us"
 title = "Bougiefever"
 theme = "ananke"
@@ -15,7 +15,7 @@ pygmentsCodeFences = true
 
 [author]
     name = "Annie Bougie"
-    github = "https://github.com/bougiefever"
+    github = "https://github.com/Bougiefever/bougiefeverblog"
     gitlab = ""
     linkedin = ""
     facebook = ""

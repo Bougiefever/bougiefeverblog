@@ -3,17 +3,29 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://bougiefever.io/</loc>
+    <loc>https://bougiefever.azurewebsites.net/posts/azure-site-recovery/</loc>
+    <lastmod>2018-10-26T08:56:12-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://bougiefever.azurewebsites.net/</loc>
+    <lastmod>2018-10-26T08:56:12-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://bougiefever.io/categories/</loc>
+    <loc>https://bougiefever.azurewebsites.net/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://bougiefever.io/tags/</loc>
+    <loc>https://bougiefever.azurewebsites.net/posts/</loc>
+    <lastmod>2018-10-26T08:56:12-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://bougiefever.azurewebsites.net/tags/</loc>
     <priority>0</priority>
   </url>
   
