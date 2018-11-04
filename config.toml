@@ -1,7 +1,7 @@
 baseURL = "https://bougiefever.azurewebsites.net/"
 languageCode = "en-us"
 title = "Bougiefever"
-theme = "ananke"
+theme = "hugo-theme-bootstrap4-blog"
 
 copyright = "Copyright &copy; 2018 - Annie Bougie"
 canonifyurls = true
@@ -13,6 +13,10 @@ enableEmoji = true
 enableGitInfo = true
 pygmentsCodeFences = true
 
+[permalinks]
+  posts = "/:year/:month/:slug/"
+  page = "/:slug/"
+
 [author]
     name = "Annie Bougie"
     github = "https://github.com/Bougiefever/bougiefeverblog"
@@ -23,10 +27,40 @@ pygmentsCodeFences = true
     instagram = ""
 
 [params]
+    # Site author
+    author = "Annie Bougie"
+
+    # Description/subtitle for homepage (can be Markdown)
+    description = "Sharing my technical journey"
+
+    # Format dates with Go's time formatting
+    date_format = "Mon Jan 02, 2006"
     tagline = "All things Azure"
     background_color_class = "bg-black"
     featured_image = "/images/computer-data-analytics-blue-background-website-header.jpg"
     recent_posts_number = 5
+    [params.sidebar]
+        # Optional about block for sidebar (can be Markdown)
+        about = "*Azure things.<br><br>[Read more →](/about)"
+
+        # How many posts to show on the sidebar (Default: 5)
+        #num_recent_posts = 2
+
+    [params.social]
+        # twitter handle for the site (ideally not a person, eg: nytimes, flickr, etc)
+        twitter = "bougiefever"
+
+[[menu.sidebar]]
+  name = "Link 1"
+  url = "https://example.com"
+
+[[menu.sidebar]]
+  name = "Link 2"
+  url = "https://example.org"
+
+[[menu.navbar]]
+  name = "Link 1"
+  url = "https://example.org"
 
 [frontmatter]
     date = ["date", "publishDate", "lastmod"]

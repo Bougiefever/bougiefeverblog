@@ -14,10 +14,10 @@
     
     <item>
       <title>Azure Site Recovery</title>
-      <link>https://bougiefever.azurewebsites.net/posts/azure-site-recovery/</link>
+      <link>https://bougiefever.azurewebsites.net/2018/10/azure-site-recovery/</link>
       <pubDate>Thu, 25 Oct 2018 15:38:45 -0500</pubDate>
       
-      <guid>https://bougiefever.azurewebsites.net/posts/azure-site-recovery/</guid>
+      <guid>https://bougiefever.azurewebsites.net/2018/10/azure-site-recovery/</guid>
       <description>What is Azure Site Recovery? Azure Site Recovery (ASR) is a disaster recovery service for Azure VMs. In the event of a disaster, you can failover your VMs to a different Azure region.</description>
     </item>
     
