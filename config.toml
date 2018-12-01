@@ -1,7 +1,8 @@
 baseURL = "https://bougiefever.azurewebsites.net/"
 languageCode = "en-us"
 title = "Bougiefever"
-theme = "ananke"
+theme = "bootstrap4"
+enableRobotsTXT = true
 
 copyright = "Copyright &copy; 2018 - Annie Bougie"
 canonifyurls = true
@@ -13,7 +14,12 @@ enableEmoji = true
 enableGitInfo = true
 pygmentsCodeFences = true
 
+[permalinks]
+  posts = "/:year/:month/:slug/"
+  page = "/:slug/"
+
 [author]
+    # Site Author
     name = "Annie Bougie"
     github = "https://github.com/Bougiefever/bougiefeverblog"
     gitlab = ""
@@ -27,6 +33,9 @@ pygmentsCodeFences = true
     background_color_class = "bg-black"
     featured_image = "/images/computer-data-analytics-blue-background-website-header.jpg"
     recent_posts_number = 5
+    author = "Annie Bougie" 
+    description = "Sharing my learnings."
+    date_format = "Mon Jan 02, 2006"
 
 [frontmatter]
     date = ["date", "publishDate", "lastmod"]
