@@ -7,19 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright &amp;copy; 2018 - Annie Bougie</copyright>
-    <lastBuildDate>Fri, 02 Nov 2018 13:28:18 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 25 Oct 2018 15:38:45 -0500</lastBuildDate>
     
 	<atom:link href="https://bougiefever.azurewebsites.net/posts/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>New Post</title>
-      <link>https://bougiefever.azurewebsites.net/2018/11/new-post/</link>
-      <pubDate>Fri, 02 Nov 2018 13:28:18 -0500</pubDate>
-      
-      <guid>https://bougiefever.azurewebsites.net/2018/11/new-post/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>Azure Site Recovery</title>
@@ -28,15 +19,6 @@
       
       <guid>https://bougiefever.azurewebsites.net/2018/10/azure-site-recovery/</guid>
       <description>Azure Site Recovery (ASR) is a disaster recovery service for Azure VMs. In the event of a disaster, you can failover your VMs to a different Azure region. ASR will recreate your Virtual Network, and create the new VMs using point-in-time recovery points.</description>
-    </item>
-    
-    <item>
-      <title>Azure Site Recovery</title>
-      <link>https://bougiefever.azurewebsites.net/2018/10/azure-site-recovery/</link>
-      <pubDate>Thu, 25 Oct 2018 15:38:45 -0500</pubDate>
-      
-      <guid>https://bougiefever.azurewebsites.net/2018/10/azure-site-recovery/</guid>
-      <description>What is Azure Site Recovery? Azure Site Recovery (ASR) is a disaster recovery service for Azure VMs. In the event of a disaster, you can failover your VMs to a different Azure region.</description>
     </item>
     
   </channel>

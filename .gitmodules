@@ -11,3 +11,6 @@
 	path = themes/ga-hugo-theme
 	url = https://github.com/giraffeacademy/ga-hugo-theme.git
 
+[submodule "themes/bootstrap4"]
+	path = themes/bootstrap4
+	url = git@github.com:Bougiefever/hugo-theme-bootstrap4-blog.git

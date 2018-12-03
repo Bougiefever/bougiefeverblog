@@ -3,23 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://bougiefever.azurewebsites.net/2018/11/new-post/</loc>
-    <lastmod>2018-12-01T14:01:46-06:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://bougiefever.azurewebsites.net/2018/10/azure-site-recovery/</loc>
     <lastmod>2018-12-03T09:26:07-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://bougiefever.azurewebsites.net/2018/10/azure-site-recovery/</loc>
-    <lastmod>2018-12-01T14:01:46-06:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://bougiefever.azurewebsites.net/</loc>
-    <lastmod>2018-12-01T14:01:46-06:00</lastmod>
+    <lastmod>2018-12-03T09:26:07-06:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -30,7 +20,7 @@
   
   <url>
     <loc>https://bougiefever.azurewebsites.net/posts/</loc>
-    <lastmod>2018-12-01T14:01:46-06:00</lastmod>
+    <lastmod>2018-12-03T09:26:07-06:00</lastmod>
     <priority>0</priority>
   </url>
   
