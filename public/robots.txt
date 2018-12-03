@@ -1,3 +1,0 @@
-Sitemap: https://bougiefever.azurewebsites.net/sitemap.xml
-
-User-agent: *
