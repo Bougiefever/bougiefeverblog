@@ -41,9 +41,6 @@ pygmentsCodeFences = true
     background_color_class = "bg-black"
     featured_image = "/images/computer-data-analytics-blue-background-website-header.jpg"
     recent_posts_number = 5
-    author = "Annie Bougie" 
-    description = "Sharing my learnings."
-    date_format = "Mon Jan 02, 2006"
     [params.sidebar]
         # Optional about block for sidebar (can be Markdown)
         about = "*Azure things.<br><br>[Read more →](/about)"
