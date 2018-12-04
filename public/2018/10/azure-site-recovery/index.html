@@ -8,7 +8,7 @@
 <meta property="og:title" content="Azure Site Recovery" />
 <meta property="og:description" content="Azure Site Recovery (ASR) is a disaster recovery service for Azure VMs. In the event of a disaster, you can failover your VMs to a different Azure region. ASR will recreate your Virtual Network, and create the new VMs using point-in-time recovery points." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://bougiefever.azurewebsites.net/2018/10/azure-site-recovery/" /><meta property="article:published_time" content="2018-10-25T15:38:45-05:00"/>
+<meta property="og:url" content="http://www.bougiefever.com/2018/10/azure-site-recovery/" /><meta property="article:published_time" content="2018-10-25T15:38:45-05:00"/>
 <meta property="article:modified_time" content="2018-12-03T09:26:07-06:00"/>
 
 <meta name="twitter:card" content="summary"/>
@@ -23,8 +23,8 @@
   "@context": "http://schema.org",
   "@type": "BlogPosting",
   "headline": "Azure Site Recovery",
-  "url": "https://bougiefever.azurewebsites.net/2018/10/azure-site-recovery/",
-  "wordCount": "559",
+  "url": "http://www.bougiefever.com/2018/10/azure-site-recovery/",
+  "wordCount": "1058",
   "datePublished": "2018-10-25T15:38:45-05:00",
   "dateModified": "2018-12-03T09:26:07-06:00",
   "author": {
@@ -36,12 +36,12 @@
 
 
 
-    <link rel="canonical" href="https://bougiefever.azurewebsites.net/2018/10/azure-site-recovery/">
+    <link rel="canonical" href="http://www.bougiefever.com/2018/10/azure-site-recovery/">
 
     <title>Azure Site Recovery | Bougiefever</title>
 
     <!-- combined, minified CSS -->
-    <link href="https://bougiefever.azurewebsites.net/css/style.css" rel="stylesheet" integrity="sha384-OvFNVIkP&#43;Nl5cttE7hAJAoBG8tYstJoQMws3MrMRBIMafodsY1TNZgycDdh2tET6" crossorigin="anonymous">
+    <link href="http://www.bougiefever.com/css/style.css" rel="stylesheet" integrity="sha384-OvFNVIkP&#43;Nl5cttE7hAJAoBG8tYstJoQMws3MrMRBIMafodsY1TNZgycDdh2tET6" crossorigin="anonymous">
 
     
 
@@ -59,10 +59,7 @@
     <div class="blog-masthead">
       <div class="container">
         <nav class="nav blog-nav">
-          <a class="nav-link " href="https://bougiefever.azurewebsites.net/">Home</a>
-          
-          <a class="nav-link" href="https://example.org" title="">Link 1</a>
-          
+          <a class="nav-link " href="http://www.bougiefever.com/">Home</a>
         </nav>
       </div>
     </div>
@@ -72,7 +69,7 @@
     
     <header class="blog-header">
       <div class="container">
-        <h1 class="blog-title"><a href="https://bougiefever.azurewebsites.net/" rel="home">Bougiefever</a></h1>
+        <h1 class="blog-title"><a href="http://www.bougiefever.com/" rel="home">Bougiefever</a></h1>
         <p class="lead blog-description">Sharing my technical journey</p>
       </div>
     </header>
@@ -89,25 +86,40 @@
 
 <article class="blog-post">
   <header>
-    <h2 class="blog-post-title"><a href="https://bougiefever.azurewebsites.net/2018/10/azure-site-recovery/">Azure Site Recovery</a></h2>
+    <h2 class="blog-post-title"><a href="http://www.bougiefever.com/2018/10/azure-site-recovery/">Azure Site Recovery</a></h2>
     <p class="blog-post-meta"><time datetime="2018-10-25T15:38:45-05:00">Thu Oct 25, 2018</time> by Annie Bougie</p>
   </header>
   
 
 <p>Azure Site Recovery (ASR) is a disaster recovery service for Azure VMs. In the event of a disaster, you can failover your VMs to a different Azure region. ASR will recreate your Virtual Network, and create the new VMs using point-in-time recovery points. For some applications, it is important to failover certain VMs together as a set. For example, if you have several VMs that are each nodes for a service, they need to failover as a group. In addition, you may have a requirement that the VMs be brought back online in a certain order. ASR can handle all of that.</p>
 
-<h3 id="set-up-a-test-environment">Set up a test environment</h3>
+<p><a href="#test">Set up a Test Environment</a></p>
+
+<ul>
+<li><a href="#create_resource_group">Create a resource group</a></li>
+<li><a href="#Create_a_virtual_network">Create a virtual network</a></li>
+<li><a href="#create_vms">Create VMs</a></li>
+</ul>
+
+<p><a href="#replication">Azure Site Recovery Replication</a></p>
+
+<ul>
+<li><a href="#Create_a_Recovery_Vault">Create a Recovery Vault</a></li>
+<li><a href="#replicate_vms">Replicate VMs</a></li>
+</ul>
+
+<h2 id="a-name-test-a-set-up-a-test-environment"><a name="test"></a>Set up a test environment</h2>
 
 <p>First, let&rsquo;s set up a couple of VMs so we can see how it works.</p>
 
-<h4 id="create-a-resource-group">Create a resource group</h4>
+<h4 id="a-name-create-resource-group-a-create-a-resource-group"><a name="create_resource_group"></a>Create a resource group</h4>
 
 <ol>
 <li>Go to the Azure portal and click the green plus in the upper left corner to create a new item.
 
 <figure>
     
-        <img src="https://bougiefever.azurewebsites.net/images/asr/create_rg_1.png" width="300" height="311" />
+        <img src="http://www.bougiefever.com/images/asr/create_rg_1.png" width="300" height="311" />
     
     
 </figure>
@@ -116,7 +128,7 @@
 
 <figure>
     
-        <img src="https://bougiefever.azurewebsites.net/images/asr/create_rg_2.png" width="300" height="311" />
+        <img src="http://www.bougiefever.com/images/asr/create_rg_2.png" width="300" height="311" />
     
     
 </figure>
@@ -125,14 +137,14 @@
 
 <figure>
     
-        <img src="https://bougiefever.azurewebsites.net/images/asr/create_rg_3.png" width="300" height="311" />
+        <img src="http://www.bougiefever.com/images/asr/create_rg_3.png" width="300" height="311" />
     
     
 </figure>
 </li>
 </ol>
 
-<h4 id="create-virtual-network">Create Virtual Network</h4>
+<h4 id="a-name-create-a-virtual-network-a-create-a-virtual-network"><a name="Create_a_virtual_network"></a>Create a virtual network</h4>
 
 <p>We will create just one virtual network that will contain all of our assets.</p>
 
@@ -141,7 +153,7 @@
 
 <figure>
     
-        <img src="https://bougiefever.azurewebsites.net/images/asr/vnet_1.png" width="600" />
+        <img src="http://www.bougiefever.com/images/asr/vnet_1.png" width="600" />
     
     
 </figure>
@@ -150,7 +162,7 @@
 
 <figure>
     
-        <img src="https://bougiefever.azurewebsites.net/images/asr/vnet_2.png" width="200" />
+        <img src="http://www.bougiefever.com/images/asr/vnet_2.png" width="200" />
     
     
 </figure>
@@ -167,14 +179,14 @@
 </ol></li>
 </ol>
 
-<h4 id="create-vms">Create VMs</h4>
+<h4 id="a-name-create-vms-a-create-vms"><a name="create_vms"></a>Create VMs</h4>
 
 <p>We will create a couple of VMs to test with.
 1. Click the green &ldquo;Add a resource&rdquo; button in the upper left corner of the Azure portal and select &ldquo;Compute&rdquo;. Click on &ldquo;See all&rdquo; to get an expanded list of available VMs in the Azure Marketplace.
 
 <figure>
     
-        <img src="https://bougiefever.azurewebsites.net/images/asr/vm_1.png" width="600" />
+        <img src="http://www.bougiefever.com/images/asr/vm_1.png" width="600" />
     
     
 </figure>
@@ -183,7 +195,7 @@
 
 <figure>
     
-        <img src="https://bougiefever.azurewebsites.net/images/asr/vm_2.png" width="500" />
+        <img src="http://www.bougiefever.com/images/asr/vm_2.png" width="500" />
     
     
 </figure>
@@ -192,7 +204,7 @@
 
 <figure>
     
-        <img src="https://bougiefever.azurewebsites.net/images/asr/vm_3.png" />
+        <img src="http://www.bougiefever.com/images/asr/vm_3.png" />
     
     
 </figure>
@@ -210,7 +222,7 @@
 
 <figure>
     
-        <img src="https://bougiefever.azurewebsites.net/images/asr/vm_4.png" />
+        <img src="http://www.bougiefever.com/images/asr/vm_4.png" />
     
     
 </figure>
@@ -220,7 +232,7 @@
 
 <figure>
     
-        <img src="https://bougiefever.azurewebsites.net/images/asr/vm_5.png" />
+        <img src="http://www.bougiefever.com/images/asr/vm_5.png" />
     
     
 </figure>
@@ -231,7 +243,7 @@
 
 <figure>
     
-        <img src="https://bougiefever.azurewebsites.net/images/asr/vm_6.png" />
+        <img src="http://www.bougiefever.com/images/asr/vm_6.png" />
     
     
 </figure>
@@ -240,7 +252,7 @@
 
 <figure>
     
-        <img src="https://bougiefever.azurewebsites.net/images/asr/vm_7.png" />
+        <img src="http://www.bougiefever.com/images/asr/vm_7.png" />
     
     
 </figure>
@@ -252,17 +264,144 @@
  
 <figure>
     
-        <img src="https://bougiefever.azurewebsites.net/images/asr/vm_8.png" />
+        <img src="http://www.bougiefever.com/images/asr/vm_8.png" />
     
     
 </figure>
 </p>
 
-<h3 id="setting-up-azure-site-recovery">Setting up Azure Site Recovery</h3>
+<h2 id="a-name-replication-a-setting-up-azure-site-recovery-replication"><a name="replication"></a>Setting up Azure Site Recovery Replication</h2>
 
-<p>We will set up Azure Site Recovery to test failing over our VMs. To test the VM failover,</p>
+<p>We will set up Azure Site Recovery in the paired region. Although you can use a non-paired region for your recovery region, there are some benefits to using paired regions. When Microsoft rolls out Azure updates, they don&rsquo;t update both regions in a pair at the same time. If an update causes an outage, only one region would be affected. If any kind of outage would affect both regional pairs, one region would be prioritized. That way at least one of the regions would be brought back online. In addition, the regions usually have high-speed connections between them, so data transfers between reginal pairs will be quicker than using a different region. All of the regional pairs are listed <a href="https://docs.microsoft.com/en-us/azure/best-practices-availability-paired-regions">here.</a></p>
 
-<h4 id="create-a-recovery-vault">Create a Recovery Vault</h4>
+<p>Azure Site Recovery must be in a different region than the one that contains the assets for obvious reasons. We will now create a new recovery vault in the paired region.</p>
+
+<h4 id="a-name-create-a-recovery-vault-a-create-a-recovery-vault"><a name="Create_a_Recovery_Vault"></a>Create a Recovery Vault</h4>
+
+<ol>
+<li>Click &ldquo;Create a resource&rdquo; and type &ldquo;Recovery&rdquo; to search the Azure Marketplace. Select &ldquo;Backup and Site Recovery (OMS)&rdquo; and click &ldquo;Create&rdquo;.</li>
+<li>Fill in the name of the recovery vault and select the subscription.</li>
+<li>Click &ldquo;Create new&rdquo; and enter a name for your resource group in the recovery region. It&rsquo;s a good idea to keep this separate from the original region for organization.</li>
+<li>Select the location to be the regional pair for the location of your VMs.</li>
+<li>Click &ldquo;Create&rdquo;
+
+<figure>
+    
+        <img src="http://www.bougiefever.com/images/asr/recovery_2.png" />
+    
+    
+</figure>
+</li>
+</ol>
+
+<h4 id="a-name-replicate-vms-a-replicate-vms"><a name="replicate_vms"></a>Replicate VMs</h4>
+
+<ol>
+<li>On the overview blade, click +Replicate to set up replication for our first VM.
+
+<figure>
+    
+        <img src="http://www.bougiefever.com/images/asr/recovery_3.png" />
+    
+    
+</figure>
+</li>
+</ol>
+
+<h5 id="step-1">Step 1</h5>
+
+<ol>
+<li>Fill in the information for the source region and click &ldquo;OK.
+
+<figure>
+    
+        <img src="http://www.bougiefever.com/images/asr/recovery_4.png" />
+    
+    
+</figure>
+</li>
+</ol>
+
+<h5 id="step-2">Step 2</h5>
+
+<ol>
+<li>In step 2, select both virtual machines for replication. Click &ldquo;OK&rdquo; to go to step 3.
+
+<figure>
+    
+        <img src="http://www.bougiefever.com/images/asr/replication_2.png" />
+    
+    
+</figure>
+</li>
+</ol>
+
+<h5 id="step-3">Step 3</h5>
+
+<p>Step 3 requires some customization to set things up in the region we already created. For this example, I created a storage account in the source region, and a new virtual network in the DR region.</p>
+
+<h5 id="customize">Customize</h5>
+
+<ol>
+<li><p>Make sure that the correct subscription is selected.
+
+<figure>
+    
+        <img src="http://www.bougiefever.com/images/asr/replication_1.png" />
+    
+    
+</figure>
+</p></li>
+
+<li><p>Click &ldquo;Customize&rdquo; next to &ldquo;Resource group, Network, Storage and Availability&rdquo; to change the default settings.
+
+<figure>
+    
+        <img src="http://www.bougiefever.com/images/asr/replication_5.png" width="600" />
+    
+    
+</figure>
+</p>
+
+<ol>
+<li>Select the resource group created in the DR region.</li>
+<li>Allow the tool to create a new virtual network, or select one you have created yourself.</li>
+<li>Select a storage account from the source region (v1), or allow the tool to create a new one.</li>
+</ol></li>
+</ol>
+
+<h4 id="a-name-replication-group-a-replication-group"><a name="replication_group"></a>Replication Group</h4>
+
+<p>A replication group will set point-in-time recovery points for several VMs at the same time. If you have a workload that requires the recovery point to be coordinated between several VMs, you need to create a replication group.</p>
+
+<ol>
+<li>Click &ldquo;Customize next to &ldquo;Replication policy&rdquo; to set up a replication group.
+
+<figure>
+    
+        <img src="http://www.bougiefever.com/images/asr/replication_6.png" />
+    
+    
+</figure>
+
+
+<figure>
+    
+        <img src="http://www.bougiefever.com/images/asr/replication_4.png" />
+    
+    
+</figure>
+
+
+<ol>
+<li>Under &ldquo;Multi-VM consistency&rdquo;, select &ldquo;Yes&rdquo;.</li>
+<li>Create a new replication group.</li>
+<li>Enter a name for the new replication group.</li>
+<li>Select the machines in the group and click &ldquo;OK&rdquo;.</li>
+</ol></li>
+<li>Click &ldquo;Create target resources&rdquo; and wait for the resources to be created.</li>
+<li>To start replicating the machines, you must click the &ldquo;Enable replication&rdquo; button at the bottom of the blade.</li>
+</ol>
 
 
   
@@ -275,10 +414,10 @@
     <section>
     <h4>Share</h4>
     <nav class="nav sharing-icons">
-      <a class="nav-item" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbougiefever.azurewebsites.net%2f2018%2f10%2fazure-site-recovery%2f" title="Share on Facebook"><span class="fa fa-facebook fa-2x" aria-hidden="true"></span></a>
-      <a class="nav-item" href="https://plus.google.com/share?url=https%3a%2f%2fbougiefever.azurewebsites.net%2f2018%2f10%2fazure-site-recovery%2f" title="Share on Google+"><span class="fa fa-google-plus fa-2x" aria-hidden="true"></span></a>
-      <a class="nav-item" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fbougiefever.azurewebsites.net%2f2018%2f10%2fazure-site-recovery%2f" title="Share on LinkedIn"><span class="fa fa-linkedin fa-2x" aria-hidden="true"></span></a>
-      <a class="nav-item" href="https://twitter.com/home?status=https%3a%2f%2fbougiefever.azurewebsites.net%2f2018%2f10%2fazure-site-recovery%2f" title="Tweet this"><span class="fa fa-twitter fa-2x"></span></a>
+      <a class="nav-item" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fwww.bougiefever.com%2f2018%2f10%2fazure-site-recovery%2f" title="Share on Facebook"><span class="fa fa-facebook fa-2x" aria-hidden="true"></span></a>
+      
+      <a class="nav-item" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fwww.bougiefever.com%2f2018%2f10%2fazure-site-recovery%2f" title="Share on LinkedIn"><span class="fa fa-linkedin fa-2x" aria-hidden="true"></span></a>
+      <a class="nav-item" href="https://twitter.com/home?status=http%3a%2f%2fwww.bougiefever.com%2f2018%2f10%2fazure-site-recovery%2f" title="Tweet this"><span class="fa fa-twitter fa-2x"></span></a>
     </nav>
   </section>
 
@@ -296,38 +435,9 @@
 
         <aside class="col-sm-3 ml-auto blog-sidebar">
   
-  <section class="sidebar-module sidebar-module-inset">
-    <h4>About</h4>
-    <p>*Azure things.<br><br><a href="https://bougiefever.azurewebsites.net/about">Read more →</a></p>
-  </section>
-  
-
-  
-        <section class="sidebar-module">
-    <h4>Recent Posts</h4>
-    <ol class="list-unstyled">
-
-
-<li><a href="https://bougiefever.azurewebsites.net/2018/10/azure-site-recovery/">Azure Site Recovery</a></li>
-
-<li><a href="https://bougiefever.azurewebsites.net/posts/">Posts</a></li>
-
-    </ol>
-  </section>
 
   
 
-  
-  <section class="sidebar-module">
-    <h4>Links</h4>
-    <ol class="list-unstyled">
-      
-      <li><a href="https://example.com">Link 1</a></li>
-      
-      <li><a href="https://example.org">Link 2</a></li>
-      
-    </ol>
-  </section>
   
 </aside>
 
