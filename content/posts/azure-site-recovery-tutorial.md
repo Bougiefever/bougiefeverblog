@@ -79,6 +79,15 @@ We will set up Azure Site Recovery in the paired region. Although you can use a 
 
 Azure Site Recovery must be in a different region than the one that contains the assets for obvious reasons. We will now create a new recovery vault in the paired region.
 
+#### Create a few assets in the Disaster Recovery region
+It makes it easier if you place your assets in the same resource group in the DR region, and ASR will sometimes put things into a new resource group by default, so let's create a few of the things we will need.
+1. Create a DR region Virtual Network
+    1. Click "Create a resource" in the upper left corner of the Azure portal, then select "Networking" and "Virtual Network".
+    {{< figure src="/images/asr/dr_vnet_1.png" >}}
+    1. Create exactly the same settings as for the source Vnet except for the location. That way we can create VMs with the same internal IP address as the source region. This will make it easier to get the DR region up and going in the case of a failover. Make sure the location is in your DR region. It may default to a different region.
+    {{< figure src="/images/asr/dr_vnet_2.png" >}}
+1. Create a DR region storage account
+
 #### <a name="Create_a_Recovery_Vault"></a>Create a Recovery Vault
 1. Click "Create a resource" and type "Recovery" to search the Azure Marketplace. Select "Backup and Site Recovery (OMS)" and click "Create".
 1. Fill in the name of the recovery vault and select the subscription.
